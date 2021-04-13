@@ -23,18 +23,25 @@ h3 {
   font-size: 1.5rem;
 }
 
-.navbar-container {
-  height: 89vh;
+.mood-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sad {
+  font-size: 3rem;
+  border: 3px solid white;
+  padding: 10px 39px;
 }
 
 .navbar {
-  height: 10%;
   background-color: #4a7480;
-  position: relative;
-  top: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px 0;
 }
 
 .fa-bars {
