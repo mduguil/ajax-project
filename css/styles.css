@@ -1,9 +1,19 @@
 body {
   background-color: #6ca4b4;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  margin: 0;
+}
+
+.page-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  font-size: 1.6rem;
 }
 
 .navbar-container {
-  height: 100vh;
+  height: 89vh;
 }
 
 .navbar {
@@ -17,6 +27,5 @@ body {
 }
 
 .fa-bars {
-  color: white;
   font-size: 2rem;
 }
