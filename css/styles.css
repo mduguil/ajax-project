@@ -11,4 +11,12 @@ body {
   background-color: #4a7480;
   position: relative;
   top: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-bars {
+  color: white;
+  font-size: 2rem;
 }
