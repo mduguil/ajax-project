@@ -1,0 +1,14 @@
+body {
+  background-color: #6ca4b4;
+}
+
+.navbar-container {
+  height: 100vh;
+}
+
+.navbar {
+  height: 10%;
+  background-color: #4a7480;
+  position: relative;
+  top: 90%;
+}
