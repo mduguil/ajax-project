@@ -1,3 +1,9 @@
+var $sadButton = document.querySelector('.sad-container');
+var $happyButton = document.querySelector('.happy-container');
+
+$sadButton.addEventListener('click');
+$happyButton.addEventListener('click');
+
 // var dataReq1 = new XMLHttpRequest();
 // dataReq1.open('GET', 'https://api.adviceslip.com/advice');
 // dataReq1.responseType = 'text';
