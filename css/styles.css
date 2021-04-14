@@ -1,5 +1,6 @@
 body {
-  background-color: #6ca4b4;
+  background-image: url("../images/Background.jpg");
+  background-size: cover;
   font-family: "Roboto", sans-serif;
   color: white;
 }
@@ -20,7 +21,7 @@ header {
 h1 {
   padding-top: 40px;
   margin: 0;
-  text-shadow: 0 4px 16px black;
+  text-shadow: 0 4px 17px #515050;
 }
 
 h3 {
@@ -67,6 +68,10 @@ h3 {
   margin: 0;
 }
 
+.choice:hover {
+  cursor: pointer;
+}
+
 .description {
   text-align: center;
   margin-top: 25px;
@@ -81,6 +86,10 @@ h3 {
   position: absolute;
   width: 100%;
   bottom: 0;
+}
+
+i:hover {
+  cursor: pointer;
 }
 
 .fa-bars {
