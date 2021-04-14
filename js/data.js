@@ -1,34 +1,37 @@
 /* exported data */
 
-// var dataReq1 = new XMLHttpRequest();
-// dataReq1.open('GET', 'https://api.adviceslip.com/advice');
-// dataReq1.responseType = 'text';
-// dataReq1.onreadystatechange = function () {
-//   if (this.readyState === 4 && this.status === 200) {
-//     JSON.parse(this.responseText);
-//   }
-// };
+function getAdvice() {
+  var dataReq = new XMLHttpRequest();
+  dataReq.open('GET', 'https://api.adviceslip.com/advice');
+  dataReq.responseType = 'text';
+  dataReq.addEventListener('load', function () {
+    advice = JSON.parse(dataReq.response);
+    // console.log(advice);
+  });
+  dataReq.send();
+}
 
-// dataReq1.send();
+getAdvice();
 
-// var dataReq2 = new XMLHttpRequest();
-// dataReq2.open('GET', 'https://api.quotable.io/random');
-// dataReq2.responseType = 'text';
-// dataReq2.onreadystatechange = function () {
-//   if (this.readyState === 4 && this.status === 200) {
-//     JSON.parse(this.responseText);
-//   }
-// };
+function getQuote() {
+  var dataReq = new XMLHttpRequest();
+  dataReq.open('GET', 'https://api.quotable.io/random');
+  dataReq.responseType = 'json';
+  dataReq.addEventListener('load', function () {
+    quote = dataReq.response;
+  });
+  dataReq.send();
+}
 
-// dataReq2.send();
+getQuote();
 
-// var dataReq3 = new XMLHttpRequest();
-// dataReq3.open('GET', 'https://dog.ceo/api/breeds/image/random');
-// dataReq3.responseType = 'text';
-// dataReq3.onreadystatechange = function () {
-//   if (this.readyState === 4 && this.status === 200) {
-//     JSON.parse(this.responseText);
-//   }
-// };
+function getAnimalData(someFunc) {
+  var dataReq = new XMLHttpRequest();
+  dataReq.open('GET', 'https://dog.ceo/api/breeds/image/random');
+  dataReq.responseType = 'json';
+  dataReq.addEventListener('load', function () {
+    someFunc(dataReq.response);
+  });
 
-// dataReq3.send();
+  dataReq.send();
+}

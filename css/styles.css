@@ -1,8 +1,10 @@
 body {
   background-image: url("../images/Background.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: "Roboto", sans-serif;
   color: white;
+  height: 90vh;
 }
 
 header {
@@ -77,12 +79,29 @@ h3 {
   margin-top: 25px;
 }
 
+.sad-view-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.animal-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dog {
+  width: 330px;
+}
+
 .navbar {
   background-color: #4a7480;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
+  padding: 15px 0;
   position: absolute;
   width: 100%;
   bottom: 0;
