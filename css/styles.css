@@ -42,6 +42,10 @@ h3 {
   padding: 15px 39px;
 }
 
+.description {
+  text-align: center;
+}
+
 .navbar {
   background-color: #4a7480;
   display: flex;

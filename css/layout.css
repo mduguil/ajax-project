@@ -2,4 +2,9 @@
   h3 {
     font-size: 1.8rem;
   }
+
+  .mood-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
