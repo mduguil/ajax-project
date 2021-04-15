@@ -24,6 +24,7 @@ function showHome(event) {
   $moods.className = 'mood-container';
   $slogan.className = 'slogan';
   $sadView.className = 'sad-view-container hidden';
+  $homeIcon.className = 'fas fa-home hidden';
 }
 
 function showSadView() {
