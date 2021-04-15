@@ -1,5 +1,6 @@
 /* global getAnimalData, getQuoteData, getAdviceData */
 
+var $body = document.querySelector('body');
 var $title = document.querySelector('.page-title');
 var $slogan = document.querySelector('.slogan');
 var $sadButton = document.querySelector('.sad');
@@ -30,6 +31,7 @@ function showHome() {
   $sadView.className = 'sad-view-container hidden';
   $happyView.className = 'happy-view-container hidden';
   $homeIcon.className = 'fas fa-home hidden';
+  $body.setAttribute('class', '');
 }
 
 function showSadView() {
@@ -41,6 +43,7 @@ function showSadView() {
 
 function showHappyView() {
   hideHome();
+  $body.setAttribute('class', 'happy-view');
   $happyView.className = 'happy-view-container';
   getAdviceData(setAdvice);
 }
