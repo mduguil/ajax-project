@@ -6,6 +6,10 @@ body {
   height: 90vh;
 }
 
+.happy-view {
+  background-image: url("../images/HappyBG.jpg");
+}
+
 .page-title {
   display: flex;
   flex-direction: column;
@@ -125,6 +129,17 @@ img {
 
 .author-line {
   margin: 0;
+}
+
+.happy-view-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.advice {
+  font-size: 2rem;
 }
 
 .navbar-container {
