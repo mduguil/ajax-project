@@ -30,6 +30,10 @@ h1:hover {
   cursor: pointer;
 }
 
+.slogan {
+  margin-bottom: 45px;
+}
+
 h3 {
   margin: 10px 0;
   font-size: 1.5rem;
@@ -135,8 +139,16 @@ button:hover {
   bottom: 0;
 }
 
+i {
+  margin: 0 13px;
+}
+
 i:hover {
   cursor: pointer;
+}
+
+.fa-home {
+  font-size: 2rem;
 }
 
 .fa-bars {
