@@ -1,3 +1,5 @@
+/* global getAnimalData, getQuoteData */
+
 var $title = document.querySelector('.page-title');
 var $slogan = document.querySelector('.slogan');
 var $sadButton = document.querySelector('.sad');

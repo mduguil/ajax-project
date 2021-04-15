@@ -1,16 +1,5 @@
-/* exported data */
 
-function getAdvice() {
-  var dataReq = new XMLHttpRequest();
-  dataReq.open('GET', 'https://api.adviceslip.com/advice');
-  dataReq.responseType = 'text';
-  dataReq.addEventListener('load', function () {
-    JSON.parse(dataReq.response);
-  });
-  dataReq.send();
-}
-
-getAdvice();
+/* exported getQuoteData, getAnimalData */
 
 function getQuoteData(callbackFunction) {
   var dataReq = new XMLHttpRequest();
