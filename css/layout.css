@@ -18,4 +18,8 @@
   .column-half {
     margin: 0 30px;
   }
+
+  .description p {
+    width: 400px;
+  }
 }
