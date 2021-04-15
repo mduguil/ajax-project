@@ -1,14 +1,9 @@
 body {
   background-image: url("../images/Background.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
   font-family: "Roboto", sans-serif;
   color: white;
   height: 90vh;
-}
-
-header {
-  margin-bottom: 20px;
 }
 
 .page-title {
@@ -17,7 +12,6 @@ header {
   align-items: center;
   margin-top: 35px;
   font-size: 1.55rem;
-  text-align: center;
 }
 
 h1 {
@@ -50,7 +44,6 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
 .mood {
@@ -75,6 +68,10 @@ h3 {
   align-items: center;
 }
 
+button {
+  outline: none;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -97,6 +94,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 60px;
 }
 
 .animal-img {
