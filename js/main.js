@@ -6,23 +6,25 @@ var $sadButton = document.querySelector('.sad');
 var $happyButton = document.querySelector('.happy');
 var $moods = document.querySelector('.mood-container');
 var $sadView = document.querySelector('.sad-view-container');
+var $happyView = document.querySelector('.happy-view-container');
 var $dogImg = document.querySelector('.dog');
 var $quote = document.querySelector('.quote');
 var $author = document.querySelector('.author');
+var $advice = document.querySelector('.advice');
 var $homeIcon = document.querySelector('.fa-home');
 
 $title.addEventListener('click', showHome);
 $homeIcon.addEventListener('click', showHome);
 $sadButton.addEventListener('click', showSadView);
-$happyButton.addEventListener('click');
+$happyButton.addEventListener('click', showHappyView);
 
-function hideHome(event) {
+function hideHome() {
   $moods.className = 'mood-container hidden';
   $slogan.className = 'slogan hidden';
   $homeIcon.className = 'fas fa-home';
 }
 
-function showHome(event) {
+function showHome() {
   $moods.className = 'mood-container';
   $slogan.className = 'slogan';
   $sadView.className = 'sad-view-container hidden';
@@ -36,6 +38,12 @@ function showSadView() {
   $sadView.className = 'sad-view-container';
 }
 
+function showHappyView() {
+  hideHome();
+  $happyView.className = 'happy-view-container';
+  getQuoteData(setAdvice);
+}
+
 function setDogImg(animal) {
   var animalData = animal;
   $dogImg.setAttribute('src', animalData.message);
@@ -45,4 +53,10 @@ function setQuote(quote) {
   var quoteData = quote;
   $quote.textContent = quoteData.content;
   $author.textContent = quoteData.author;
+}
+
+function setAdvice(quote) {
+  var adviceData = quote;
+  var advice = adviceData.slip.advice;
+  $advice.textContent = advice;
 }
