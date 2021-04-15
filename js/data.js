@@ -5,32 +5,30 @@ function getAdvice() {
   dataReq.open('GET', 'https://api.adviceslip.com/advice');
   dataReq.responseType = 'text';
   dataReq.addEventListener('load', function () {
-    advice = JSON.parse(dataReq.response);
-    // console.log(advice);
+    JSON.parse(dataReq.response);
   });
   dataReq.send();
 }
 
 getAdvice();
 
-function getQuote() {
+function getQuoteData(callbackFunction) {
   var dataReq = new XMLHttpRequest();
   dataReq.open('GET', 'https://api.quotable.io/random');
   dataReq.responseType = 'json';
   dataReq.addEventListener('load', function () {
-    quote = dataReq.response;
+    callbackFunction(dataReq.response);
   });
+
   dataReq.send();
 }
 
-getQuote();
-
-function getAnimalData(someFunc) {
+function getAnimalData(callbackFunction) {
   var dataReq = new XMLHttpRequest();
   dataReq.open('GET', 'https://dog.ceo/api/breeds/image/random');
   dataReq.responseType = 'json';
   dataReq.addEventListener('load', function () {
-    someFunc(dataReq.response);
+    callbackFunction(dataReq.response);
   });
 
   dataReq.send();
