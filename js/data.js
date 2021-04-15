@@ -3,7 +3,7 @@
 
 function getQuoteData(callbackFunction) {
   var dataReq = new XMLHttpRequest();
-  dataReq.open('GET', 'https://api.adviceslip.com/advice');
+  dataReq.open('GET', 'https://api.quotable.io/random');
   dataReq.responseType = 'json';
   dataReq.addEventListener('load', function () {
     callbackFunction(dataReq.response);
@@ -25,7 +25,7 @@ function getAnimalData(callbackFunction) {
 
 function getAdviceData(callbackFunction) {
   var dataReq = new XMLHttpRequest();
-  dataReq.open('GET', 'https://api.quotable.io/random');
+  dataReq.open('GET', 'https://api.adviceslip.com/advice');
   dataReq.responseType = 'json';
   dataReq.addEventListener('load', function () {
     callbackFunction(dataReq.response);

@@ -1,4 +1,4 @@
-/* global getAnimalData, getQuoteData */
+/* global getAnimalData, getQuoteData, getAdviceData */
 
 var $title = document.querySelector('.page-title');
 var $slogan = document.querySelector('.slogan');
@@ -28,6 +28,7 @@ function showHome() {
   $moods.className = 'mood-container';
   $slogan.className = 'slogan';
   $sadView.className = 'sad-view-container hidden';
+  $happyView.className = 'happy-view-container hidden';
   $homeIcon.className = 'fas fa-home hidden';
 }
 
@@ -41,7 +42,7 @@ function showSadView() {
 function showHappyView() {
   hideHome();
   $happyView.className = 'happy-view-container';
-  getQuoteData(setAdvice);
+  getAdviceData(setAdvice);
 }
 
 function setDogImg(animal) {
