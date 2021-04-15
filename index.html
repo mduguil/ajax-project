@@ -5,14 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AJAX Project</title>
   <link rel="icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
   <header>
+    <div class="page-title">
+      <h1>JUST READ IT</h1>
+      <div class="slogan">
+        <h3>The daily page to waste a minute</h3>
+      </div>
+    </div>
   </header>
   <main>
+    <div class="mood-container">
+      <div class="sad-container spacing">
+        <div class="choice">
+          <button class="mood sad">Sad Life</button>
+        </div>
+        <div class="description">
+          <p>Read a motivational quote to get through your day</p>
+        </div>
+      </div>
+      <div class="happy-container spacing">
+        <div class="choice">
+          <button class="mood happy">Happy Times</button>
+        </div>
+        <div class="description">
+          <p>Words of advice from the wise</p>
+        </div>
+      </div>
+    </div>
+    <div class="sad-view-container hidden">
+      <div class="animal-img column-half">
+        <img class="dog" src="images/puppy.jpg" alt="Cute furry friend">
+      </div>
+      <div class="quote-container column-half">
+        <p class="quote">“The greater part of human pain is unnecessary. It is self-created as long as the unobserved mind runs your life.”</p>
+        <div class="author-container">
+          <p class="author-line">~ <span class="author">Eckhart Tolle</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-container">
+      <div class="navbar">
+        <i class="fas fa-home hidden"></i>
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

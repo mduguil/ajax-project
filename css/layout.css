@@ -1,0 +1,25 @@
+.hidden {
+  display: none !important;
+}
+
+@media screen and (min-width: 750px) {
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  .mood-container {
+    flex-direction: row;
+  }
+
+  .sad-view-container {
+    flex-wrap: nowrap;
+  }
+
+  .column-half {
+    margin: 0 30px;
+  }
+
+  .description p {
+    width: 400px;
+  }
+}
