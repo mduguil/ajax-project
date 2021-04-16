@@ -14,17 +14,22 @@ var $author = document.querySelector('.author');
 var $advice = document.querySelector('.advice');
 var $homeIcon = document.querySelector('.fa-home');
 var $reviewBtn = document.querySelector('.review-container');
+var $encouragement = document.querySelector('.sad-like-container');
 
 $title.addEventListener('click', showHome);
 $homeIcon.addEventListener('click', showHome);
 $sadButton.addEventListener('click', showSadView);
 $happyButton.addEventListener('click', showHappyView);
-$reviewBtn.addEventListener('click', doAfterReview);
+$reviewBtn.addEventListener('click', doAfterSadReview);
 
-function doAfterReview(event) {
+function doAfterSadReview(event) {
   if (event.target.matches('.sad-dislike')) {
     getAnimalData(setDogImg);
     getQuoteData(setQuote);
+  }
+
+  if (event.target.matches('.sad-like')) {
+    showEncouragement();
   }
 }
 
@@ -48,6 +53,11 @@ function showSadView() {
   getAnimalData(setDogImg);
   getQuoteData(setQuote);
   $sadView.className = 'sad-view-container';
+}
+
+function showEncouragement() {
+  $sadView.className = 'sad-view-container hidden';
+  $encouragement.className = 'sad-like-container';
 }
 
 function showHappyView() {
