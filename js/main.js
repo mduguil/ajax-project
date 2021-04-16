@@ -15,6 +15,11 @@ var $advice = document.querySelector('.advice');
 var $homeIcon = document.querySelector('.fa-home');
 var $reviewBtn = document.querySelector('.review-container');
 var $encouragement = document.querySelector('.sad-like-container');
+var $encouragementPhrase = document.querySelector('.encouragement');
+var encouragements = {
+  1: 'Today is a different day than yesterday.',
+  2: 'Believe in yourself.'
+};
 
 $title.addEventListener('click', showHome);
 $homeIcon.addEventListener('click', showHome);
@@ -30,7 +35,13 @@ function doAfterSadReview(event) {
 
   if (event.target.matches('.sad-like')) {
     showEncouragement();
+    $encouragementPhrase.textContent = encouragements[getRandomInt()];
+    setTimeout(showHome, 2000);
   }
+}
+
+function getRandomInt() {
+  return Math.floor(Math.random() * 2) + 1;
 }
 
 function hideHome() {
