@@ -13,19 +13,23 @@ var $quote = document.querySelector('.quote');
 var $author = document.querySelector('.author');
 var $advice = document.querySelector('.advice');
 var $homeIcon = document.querySelector('.fa-home');
-var $reviewBtn = document.querySelector('.review-container');
+var $sadReviewBtn = document.querySelector('.review-container');
+var $happyReviewBtn = document.querySelector('.happy-review-container');
 var $encouragement = document.querySelector('.sad-like-container');
 var $encouragementPhrase = document.querySelector('.encouragement');
+
 var encouragements = {
   1: 'Today is a different day than yesterday.',
-  2: 'Believe in yourself.'
+  2: 'Believe in yourself.',
+  3: 'Go kick ass!'
 };
 
 $title.addEventListener('click', showHome);
 $homeIcon.addEventListener('click', showHome);
 $sadButton.addEventListener('click', showSadView);
 $happyButton.addEventListener('click', showHappyView);
-$reviewBtn.addEventListener('click', doAfterSadReview);
+$sadReviewBtn.addEventListener('click', doAfterSadReview);
+$happyReviewBtn.addEventListener('click', doAfterHappyReview);
 
 function doAfterSadReview(event) {
   if (event.target.matches('.sad-dislike')) {
@@ -35,13 +39,22 @@ function doAfterSadReview(event) {
 
   if (event.target.matches('.sad-like')) {
     showEncouragement();
-    $encouragementPhrase.textContent = encouragements[getRandomInt()];
+    $encouragementPhrase.textContent = encouragements[getRandomInt(encouragements)];
     setTimeout(showHome, 2500);
   }
 }
 
-function getRandomInt() {
-  return Math.floor(Math.random() * 2) + 1;
+function doAfterHappyReview(event) {
+  if (event.target.matches('.happy-dislike')) {
+    getAdviceData(setAdvice);
+  }
+
+  // if (event.target.matches('.happy-like'))
+}
+
+function getRandomInt(obj) {
+  var length = Object.keys(obj).length;
+  return Math.floor(Math.random() * length) + 1;
 }
 
 function hideHome() {
