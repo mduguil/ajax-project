@@ -13,11 +13,20 @@ var $quote = document.querySelector('.quote');
 var $author = document.querySelector('.author');
 var $advice = document.querySelector('.advice');
 var $homeIcon = document.querySelector('.fa-home');
+var $reviewBtn = document.querySelector('.review-container');
 
 $title.addEventListener('click', showHome);
 $homeIcon.addEventListener('click', showHome);
 $sadButton.addEventListener('click', showSadView);
 $happyButton.addEventListener('click', showHappyView);
+$reviewBtn.addEventListener('click', doAfterReview);
+
+function doAfterReview(event) {
+  if (event.target.matches('.sad-dislike')) {
+    getAnimalData(setDogImg);
+    getQuoteData(setQuote);
+  }
+}
 
 function hideHome() {
   $moods.className = 'mood-container hidden';
