@@ -36,7 +36,7 @@ function doAfterSadReview(event) {
   if (event.target.matches('.sad-like')) {
     showEncouragement();
     $encouragementPhrase.textContent = encouragements[getRandomInt()];
-    setTimeout(showHome, 2000);
+    setTimeout(showHome, 2500);
   }
 }
 
@@ -56,6 +56,7 @@ function showHome() {
   $sadView.className = 'sad-view-container hidden';
   $happyView.className = 'happy-view-container hidden';
   $homeIcon.className = 'fas fa-home hidden';
+  $encouragement.className = 'sad-like-container hidden';
   $body.setAttribute('class', '');
 }
 
