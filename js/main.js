@@ -42,7 +42,7 @@ function doAfterSadReview(event) {
   if (event.target.matches('.sad-like')) {
     showSadEncouragement();
     $sadEncouragementPhrase.textContent = encouragements[getRandomInt(encouragements)];
-    setTimeout(showHome, 2500);
+    setTimeout(showHome, 2200);
   }
 }
 
