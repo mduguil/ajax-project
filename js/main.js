@@ -20,11 +20,7 @@ var $sadEncouragementPhrase = document.querySelector('.encouragement');
 var $happyEncouragement = document.querySelector('.happy-like-container');
 var $happyEncouragementPhrase = document.querySelector('.happy-encouragement');
 
-var encouragements = {
-  1: 'Today is a different day than yesterday.',
-  2: 'Believe in yourself.',
-  3: 'Go kick ass!'
-};
+var encouragements = ['Today is a different day than yesterday.', 'Believe in yourself.', 'Go kick ass!'];
 
 $title.addEventListener('click', showHome);
 $homeIcon.addEventListener('click', showHome);
@@ -60,8 +56,8 @@ function doAfterHappyReview(event) {
   }
 }
 
-function getRandomInt(obj) {
-  var length = Object.keys(obj).length;
+function getRandomInt(arr) {
+  var length = arr.length;
   return Math.floor(Math.random() * length) + 1;
 }
 
