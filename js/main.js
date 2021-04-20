@@ -15,8 +15,10 @@ var $advice = document.querySelector('.advice');
 var $homeIcon = document.querySelector('.fa-home');
 var $sadReviewBtn = document.querySelector('.review-container');
 var $happyReviewBtn = document.querySelector('.happy-review-container');
-var $encouragement = document.querySelector('.sad-like-container');
-var $encouragementPhrase = document.querySelector('.encouragement');
+var $sadEncouragement = document.querySelector('.sad-like-container');
+var $sadEncouragementPhrase = document.querySelector('.encouragement');
+var $happyEncouragement = document.querySelector('.happy-like-container');
+var $happyEncouragementPhrase = document.querySelector('.happy-encouragement');
 
 var encouragements = {
   1: 'Today is a different day than yesterday.',
@@ -38,8 +40,8 @@ function doAfterSadReview(event) {
   }
 
   if (event.target.matches('.sad-like')) {
-    showEncouragement();
-    $encouragementPhrase.textContent = encouragements[getRandomInt(encouragements)];
+    showSadEncouragement();
+    $sadEncouragementPhrase.textContent = encouragements[getRandomInt(encouragements)];
     setTimeout(showHome, 2500);
   }
 }
@@ -49,7 +51,13 @@ function doAfterHappyReview(event) {
     getAdviceData(setAdvice);
   }
 
-  // if (event.target.matches('.happy-like'))
+  if (event.target.matches('.happy-like')) {
+    $happyEncouragement.className = 'happy-like-container';
+    $happyView.className = 'happy-view-container hidden';
+
+    $happyEncouragementPhrase.textContent = encouragements[getRandomInt(encouragements)];
+    setTimeout(showHome, 2500);
+  }
 }
 
 function getRandomInt(obj) {
@@ -69,7 +77,8 @@ function showHome() {
   $sadView.className = 'sad-view-container hidden';
   $happyView.className = 'happy-view-container hidden';
   $homeIcon.className = 'fas fa-home hidden';
-  $encouragement.className = 'sad-like-container hidden';
+  $sadEncouragement.className = 'sad-like-container hidden';
+  $happyEncouragement.className = 'happy-like-container hidden';
   $body.setAttribute('class', '');
 }
 
@@ -80,9 +89,9 @@ function showSadView() {
   $sadView.className = 'sad-view-container';
 }
 
-function showEncouragement() {
+function showSadEncouragement() {
   $sadView.className = 'sad-view-container hidden';
-  $encouragement.className = 'sad-like-container';
+  $sadEncouragement.className = 'sad-like-container';
 }
 
 function showHappyView() {

@@ -192,6 +192,17 @@ img {
   text-align: center;
 }
 
+.happy-like-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.happy-encouragement {
+  font-size: 2.1rem;
+}
+
 .navbar-container {
   position: fixed;
   bottom: 0;
