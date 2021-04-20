@@ -3,7 +3,7 @@ body {
   background-size: cover;
   font-family: "Roboto", sans-serif;
   color: white;
-  height: 90vh;
+  height: 100vh;
 }
 
 .happy-view {
@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 35px;
+  padding-top: 35px;
   font-size: 1.55rem;
 }
 
@@ -30,6 +30,13 @@ h1:hover {
 
 .slogan {
   margin-bottom: 45px;
+}
+
+.slogan-underline {
+  height: 3px;
+  background: #fff;
+  width: 50%;
+  margin: 1px auto 0;
 }
 
 h3 {
@@ -96,7 +103,6 @@ button:hover {
   display: flex;
   width: 100%;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   margin-top: 60px;
 }
@@ -104,6 +110,7 @@ button:hover {
 .animal-img {
   display: flex;
   justify-content: center;
+  flex: 1 1 50%;
 }
 
 img {
@@ -113,7 +120,17 @@ img {
 
 .dog {
   width: 355px;
-  max-height: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 25px;
+  flex: 1 1 50%;
 }
 
 .quote {
@@ -125,16 +142,50 @@ img {
   display: flex;
   justify-content: flex-end;
   font-size: 1.2rem;
+  margin-bottom: 40px;
 }
 
 .author-line {
   margin: 0;
 }
 
+.review-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.review-btn {
+  margin: 0 20px;
+  height: 40px;
+  width: 120px;
+  background-color: transparent;
+  border: 4px solid white;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.sad-like-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.encouragement {
+  text-align: center;
+  font-size: 2.1rem;
+}
+
 .happy-view-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 400px;
 }
 
@@ -143,8 +194,23 @@ img {
   text-align: center;
 }
 
+.happy-like-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.happy-encouragement {
+  text-align: center;
+  font-size: 2.1rem;
+}
+
 .navbar-container {
-  margin-top: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .navbar {
@@ -153,9 +219,6 @@ img {
   justify-content: center;
   align-items: center;
   padding: 15px 0;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
 }
 
 i {

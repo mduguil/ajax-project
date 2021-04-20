@@ -13,11 +13,53 @@ var $quote = document.querySelector('.quote');
 var $author = document.querySelector('.author');
 var $advice = document.querySelector('.advice');
 var $homeIcon = document.querySelector('.fa-home');
+var $sadReviewBtn = document.querySelector('.review-container');
+var $happyReviewBtn = document.querySelector('.happy-review-container');
+var $sadEncouragement = document.querySelector('.sad-like-container');
+var $sadEncouragementPhrase = document.querySelector('.encouragement');
+var $happyEncouragement = document.querySelector('.happy-like-container');
+var $happyEncouragementPhrase = document.querySelector('.happy-encouragement');
+
+var encouragements = ['Today is a different day than yesterday.', 'Believe in yourself.', 'Go kick ass!'];
 
 $title.addEventListener('click', showHome);
 $homeIcon.addEventListener('click', showHome);
 $sadButton.addEventListener('click', showSadView);
 $happyButton.addEventListener('click', showHappyView);
+$sadReviewBtn.addEventListener('click', doAfterSadReview);
+$happyReviewBtn.addEventListener('click', doAfterHappyReview);
+
+function doAfterSadReview(event) {
+  if (event.target.matches('.sad-dislike')) {
+    getAnimalData(setDogImg);
+    getQuoteData(setQuote);
+  }
+
+  if (event.target.matches('.sad-like')) {
+    showSadEncouragement();
+    $sadEncouragementPhrase.textContent = encouragements[getRandomInt(encouragements)];
+    setTimeout(showHome, 2200);
+  }
+}
+
+function doAfterHappyReview(event) {
+  if (event.target.matches('.happy-dislike')) {
+    getAdviceData(setAdvice);
+  }
+
+  if (event.target.matches('.happy-like')) {
+    $happyEncouragement.className = 'happy-like-container';
+    $happyView.className = 'happy-view-container hidden';
+
+    $happyEncouragementPhrase.textContent = encouragements[getRandomInt(encouragements)];
+    setTimeout(showHome, 2500);
+  }
+}
+
+function getRandomInt(arr) {
+  var length = arr.length;
+  return Math.floor(Math.random() * length) + 1;
+}
 
 function hideHome() {
   $moods.className = 'mood-container hidden';
@@ -31,6 +73,8 @@ function showHome() {
   $sadView.className = 'sad-view-container hidden';
   $happyView.className = 'happy-view-container hidden';
   $homeIcon.className = 'fas fa-home hidden';
+  $sadEncouragement.className = 'sad-like-container hidden';
+  $happyEncouragement.className = 'happy-like-container hidden';
   $body.setAttribute('class', '');
 }
 
@@ -39,6 +83,11 @@ function showSadView() {
   getAnimalData(setDogImg);
   getQuoteData(setQuote);
   $sadView.className = 'sad-view-container';
+}
+
+function showSadEncouragement() {
+  $sadView.className = 'sad-view-container hidden';
+  $sadEncouragement.className = 'sad-like-container';
 }
 
 function showHappyView() {
