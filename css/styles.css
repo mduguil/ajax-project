@@ -126,6 +126,7 @@ img {
 
 .quote-container {
   display: flex;
+  justify-content: center;
   align-items: center;
   position: relative;
   padding-bottom: 25px;
@@ -176,6 +177,7 @@ img {
 }
 
 .encouragement {
+  text-align: center;
   font-size: 2.1rem;
 }
 
@@ -200,6 +202,7 @@ img {
 }
 
 .happy-encouragement {
+  text-align: center;
   font-size: 2.1rem;
 }
 
