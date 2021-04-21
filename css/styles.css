@@ -73,19 +73,19 @@ h3 {
   font-size: 1.1rem;
 }
 
-.form-container {
+.center {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 450px;
+}
+
+.form-container {
+  align-items: center;
   margin-top: 30px;
 }
 
 form {
-  display: flex;
-  justify-content: center;
   width: 350px;
-  height: 450px;
   background-color: #a2c6c6;
   flex-direction: column;
   box-shadow: 0 0 16px 1px #646363;

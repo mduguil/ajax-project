@@ -59,13 +59,13 @@ function submitEntry(event) {
 
 function showForm() {
   $entriesView.className = 'entry-container hidden';
-  $formView.className = 'form-container';
+  $formView.className = 'form-container center';
 }
 
 function showEntries() {
   hideHome();
   $entriesView.className = 'entry-container';
-  $formView.className = 'form-container hidden';
+  $formView.className = 'form-container center hidden';
 }
 
 function doAfterSadReview(event) {
