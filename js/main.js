@@ -8,17 +8,21 @@ var $happyButton = document.querySelector('.happy');
 var $moods = document.querySelector('.mood-container');
 var $sadView = document.querySelector('.sad-view-container');
 var $happyView = document.querySelector('.happy-view-container');
+var $entriesView = document.querySelector('.entry-container');
 var $dogImg = document.querySelector('.dog');
 var $quote = document.querySelector('.quote');
 var $author = document.querySelector('.author');
 var $advice = document.querySelector('.advice');
 var $homeIcon = document.querySelector('.fa-home');
+var $entryIcon = document.querySelector('.fa-bars');
 var $sadReviewBtn = document.querySelector('.review-container');
 var $happyReviewBtn = document.querySelector('.happy-review-container');
 var $sadEncouragement = document.querySelector('.sad-like-container');
 var $sadEncouragementPhrase = document.querySelector('.encouragement');
 var $happyEncouragement = document.querySelector('.happy-like-container');
 var $happyEncouragementPhrase = document.querySelector('.happy-encouragement');
+var $newEntryBtn = document.querySelector('.new-entry-btn');
+var $formView = document.querySelector('.form-container');
 var $form = document.querySelector('form');
 var $name = document.querySelector('#name');
 var $moodInput = document.querySelector('#mood-input');
@@ -28,11 +32,24 @@ var encouragements = ['Today is a different day than yesterday.', 'Believe in yo
 
 $title.addEventListener('click', showHome);
 $homeIcon.addEventListener('click', showHome);
+$entryIcon.addEventListener('click', showEntries);
 $sadButton.addEventListener('click', showSadView);
 $happyButton.addEventListener('click', showHappyView);
 $sadReviewBtn.addEventListener('click', doAfterSadReview);
 $happyReviewBtn.addEventListener('click', doAfterHappyReview);
+$newEntryBtn.addEventListener('click', showForm);
 $form.addEventListener('submit', submitEntry);
+
+function showEntries() {
+  hideHome();
+  $entriesView.className = 'entry-container';
+  $formView.className = 'form-container hidden';
+}
+
+function showForm() {
+  $entriesView.className = 'entry-container hidden';
+  $formView.className = 'form-container';
+}
 
 function submitEntry(event) {
   event.preventDefault();
@@ -48,6 +65,7 @@ function submitEntry(event) {
   formData.entries.unshift(entry);
   formData.nextEntryId++;
   $form.reset();
+  showEntries();
 }
 function doAfterSadReview(event) {
   if (event.target.matches('.sad-dislike')) {
@@ -95,6 +113,7 @@ function showHome() {
   $homeIcon.className = 'fas fa-home hidden';
   $sadEncouragement.className = 'sad-like-container hidden';
   $happyEncouragement.className = 'happy-like-container hidden';
+  $formView.className = 'form-container hidden';
   $body.setAttribute('class', '');
 }
 
