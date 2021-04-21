@@ -1,6 +1,11 @@
 
 /* exported getQuoteData, getAnimalData, getAdviceData */
 
+var formData = {
+  entries: [],
+  entryId: 1
+};
+
 function getQuoteData(callbackFunction) {
   var dataReq = new XMLHttpRequest();
   dataReq.open('GET', 'https://api.quotable.io/random');
