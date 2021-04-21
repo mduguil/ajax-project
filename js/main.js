@@ -19,6 +19,7 @@ var $sadEncouragement = document.querySelector('.sad-like-container');
 var $sadEncouragementPhrase = document.querySelector('.encouragement');
 var $happyEncouragement = document.querySelector('.happy-like-container');
 var $happyEncouragementPhrase = document.querySelector('.happy-encouragement');
+var $form = document.querySelector('form');
 
 var encouragements = ['Today is a different day than yesterday.', 'Believe in yourself.', 'Go kick ass!'];
 
@@ -28,6 +29,7 @@ $sadButton.addEventListener('click', showSadView);
 $happyButton.addEventListener('click', showHappyView);
 $sadReviewBtn.addEventListener('click', doAfterSadReview);
 $happyReviewBtn.addEventListener('click', doAfterHappyReview);
+$form.addEventListener('submit');
 
 function doAfterSadReview(event) {
   if (event.target.matches('.sad-dislike')) {
