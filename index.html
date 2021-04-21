@@ -18,14 +18,33 @@
   <header>
     <div class="page-title">
       <h1>JUST READ IT</h1>
-      <div class="slogan">
+      <div class="slogan hidden">
         <h3>The daily page to waste a minute</h3>
         <div class="slogan-underline"></div>
       </div>
     </div>
   </header>
   <main>
-    <div class="mood-container">
+    <div class="entry-container">
+
+    </div>
+    <div class="form-container hidden">
+      <form>
+        <div class="name">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name">
+        </div>
+        <div class="mood-input">
+          <label for="mood-input">Mood</label>
+          <input id="mood-input" type="text" name="mood-input">
+        </div>
+        <div class="notes">
+          <label for="notes">How are you feeling today?</label>
+          <textarea id="notes" name="notes"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="mood-container hidden">
       <div class="sad-container spacing">
         <div class="choice">
           <button class="mood sad">Sad Life</button>
