@@ -35,15 +35,19 @@ $happyReviewBtn.addEventListener('click', doAfterHappyReview);
 $form.addEventListener('submit', submitEntry);
 
 function submitEntry(event) {
+  event.preventDefault();
+
   var entry = {
     name: $name.value,
     mood: $moodInput.value,
     notes: $notes.value,
-    entryId: formData.nextEntryId
+    entryId: formData.nextEntryId,
+    date: new Date()
   };
 
   formData.entries.unshift(entry);
   formData.nextEntryId++;
+  $form.reset();
   console.log(formData.entries);
 }
 function doAfterSadReview(event) {
