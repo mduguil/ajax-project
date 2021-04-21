@@ -1,4 +1,4 @@
-/* global getAnimalData, getQuoteData, getAdviceData */
+/* global getAnimalData, getQuoteData, getAdviceData, formData */
 
 var $body = document.querySelector('body');
 var $title = document.querySelector('.page-title');
@@ -20,6 +20,9 @@ var $sadEncouragementPhrase = document.querySelector('.encouragement');
 var $happyEncouragement = document.querySelector('.happy-like-container');
 var $happyEncouragementPhrase = document.querySelector('.happy-encouragement');
 var $form = document.querySelector('form');
+var $name = document.querySelector('#name');
+var $moodInput = document.querySelector('#mood-input');
+var $notes = document.querySelector('#notes');
 
 var encouragements = ['Today is a different day than yesterday.', 'Believe in yourself.', 'Go kick ass!'];
 
@@ -29,8 +32,20 @@ $sadButton.addEventListener('click', showSadView);
 $happyButton.addEventListener('click', showHappyView);
 $sadReviewBtn.addEventListener('click', doAfterSadReview);
 $happyReviewBtn.addEventListener('click', doAfterHappyReview);
-$form.addEventListener('submit');
+$form.addEventListener('submit', submitEntry);
 
+function submitEntry(event) {
+  var entry = {
+    name: $name.value,
+    mood: $moodInput.value,
+    notes: $notes.value,
+    entryId: formData.nextEntryId
+  };
+
+  formData.entries.unshift(entry);
+  formData.nextEntryId++;
+  console.log(formData.entries);
+}
 function doAfterSadReview(event) {
   if (event.target.matches('.sad-dislike')) {
     getAnimalData(setDogImg);

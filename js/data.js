@@ -1,9 +1,9 @@
 
-/* exported getQuoteData, getAnimalData, getAdviceData */
+/* exported getQuoteData, getAnimalData, getAdviceData, formData */
 
 var formData = {
   entries: [],
-  entryId: 1
+  nextEntryId: 1
 };
 
 function getQuoteData(callbackFunction) {
