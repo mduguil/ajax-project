@@ -57,6 +57,11 @@ h3 {
   margin-top: 30px;
 }
 
+.new-entry-btn {
+  width: 100px;
+  height: 40px;
+}
+
 .mood-container {
   display: flex;
   flex-direction: column;
