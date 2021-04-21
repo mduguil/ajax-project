@@ -48,7 +48,6 @@ function submitEntry(event) {
   formData.entries.unshift(entry);
   formData.nextEntryId++;
   $form.reset();
-  console.log(formData.entries);
 }
 function doAfterSadReview(event) {
   if (event.target.matches('.sad-dislike')) {
