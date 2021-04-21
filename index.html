@@ -35,17 +35,22 @@
     </div>
     <div class="form-container">
       <form>
-        <div class="name">
+        <div class="name input">
           <label for="name">Name</label>
           <input id="name" type="text" name="name" required>
         </div>
-        <div class="mood-input">
+        <div class="mood-input input">
           <label for="mood-input">Mood</label>
           <input id="mood-input" type="text" name="mood-input" required>
         </div>
-        <div class="notes">
+        <div class="notes input">
           <label for="notes">How are you feeling today?</label>
-          <textarea id="notes" name="notes" placeholder="Today I am feeling..." required></textarea>
+          <div class="textarea-container">
+            <textarea id="notes" name="notes" placeholder="Today I am feeling..." required></textarea>
+          </div>
+        </div>
+        <div class="submit-btn-container">
+          <button class="submit">Submit</button>
         </div>
       </form>
     </div>
