@@ -57,9 +57,18 @@ h3 {
   margin-top: 30px;
 }
 
+.new-entry-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
 .new-entry-btn {
   width: 100px;
   height: 40px;
+  background-color: #95c7d4;
+  border: #85b2be;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 1px #678d97;
 }
 
 .mood-container {
