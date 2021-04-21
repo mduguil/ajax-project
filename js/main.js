@@ -40,17 +40,6 @@ $happyReviewBtn.addEventListener('click', doAfterHappyReview);
 $newEntryBtn.addEventListener('click', showForm);
 $form.addEventListener('submit', submitEntry);
 
-function showEntries() {
-  hideHome();
-  $entriesView.className = 'entry-container';
-  $formView.className = 'form-container hidden';
-}
-
-function showForm() {
-  $entriesView.className = 'entry-container hidden';
-  $formView.className = 'form-container';
-}
-
 function submitEntry(event) {
   event.preventDefault();
 
@@ -67,6 +56,18 @@ function submitEntry(event) {
   $form.reset();
   showEntries();
 }
+
+function showForm() {
+  $entriesView.className = 'entry-container hidden';
+  $formView.className = 'form-container';
+}
+
+function showEntries() {
+  hideHome();
+  $entriesView.className = 'entry-container';
+  $formView.className = 'form-container hidden';
+}
+
 function doAfterSadReview(event) {
   if (event.target.matches('.sad-dislike')) {
     getAnimalData(setDogImg);
@@ -90,7 +91,7 @@ function doAfterHappyReview(event) {
     $happyView.className = 'happy-view-container hidden';
 
     $happyEncouragementPhrase.textContent = encouragements[getRandomInt(encouragements)];
-    setTimeout(showHome, 2500);
+    setTimeout(showHome, 2200);
   }
 }
 
@@ -114,6 +115,7 @@ function showHome() {
   $sadEncouragement.className = 'sad-like-container hidden';
   $happyEncouragement.className = 'happy-like-container hidden';
   $formView.className = 'form-container hidden';
+  $entriesView.className = 'entry-container hidden';
   $body.setAttribute('class', '');
 }
 
