@@ -50,6 +50,13 @@ h3 {
   margin: 20px 5px;
 }
 
+.placeholder-container {
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-top: 30px;
+}
+
 .mood-container {
   display: flex;
   flex-direction: column;
