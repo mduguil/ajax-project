@@ -1,5 +1,20 @@
 
-/* exported getQuoteData, getAnimalData, getAdviceData */
+/* exported getQuoteData, getAnimalData, getAdviceData, formData */
+
+var formData = {
+  entries: [],
+  nextEntryId: 1
+};
+var previousData = localStorage.getItem('feeling-entries');
+
+if (previousData !== null) {
+  formData = JSON.parse(previousData);
+}
+
+window.addEventListener('beforeunload', function (event) {
+  var dataJSON = JSON.stringify(formData);
+  localStorage.setItem('feeling-entries', dataJSON);
+});
 
 function getQuoteData(callbackFunction) {
   var dataReq = new XMLHttpRequest();

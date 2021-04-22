@@ -25,6 +25,35 @@
     </div>
   </header>
   <main>
+    <div class="entry-container hidden">
+      <div class="placeholder-container">
+        <p>No submitted entry.</p>
+      </div>
+      <div class="new-entry-btn-container">
+        <button class="new-entry-btn">New Entry</button>
+      </div>
+    </div>
+    <div class="form-container center hidden">
+      <form class="center">
+        <div class="name input">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" required>
+        </div>
+        <div class="mood-input input">
+          <label for="mood-input">Mood</label>
+          <input id="mood-input" type="text" name="mood-input" required>
+        </div>
+        <div class="notes input">
+          <label for="notes">How are you feeling today?</label>
+          <div class="textarea-container">
+            <textarea id="notes" name="notes" placeholder="Today I am feeling..." required></textarea>
+          </div>
+        </div>
+        <div class="submit-btn-container">
+          <button class="submit">Submit</button>
+        </div>
+      </form>
+    </div>
     <div class="mood-container">
       <div class="sad-container spacing">
         <div class="choice">
