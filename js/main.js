@@ -8,7 +8,7 @@ var $happyButton = document.querySelector('.happy');
 var $moods = document.querySelector('.mood-container');
 var $sadView = document.querySelector('.sad-view-container');
 var $happyView = document.querySelector('.happy-view-container');
-var $entriesView = document.querySelector('.entry-container');
+var $entriesView = document.querySelector('.entry-view-container');
 var $dogImg = document.querySelector('.dog');
 var $quote = document.querySelector('.quote');
 var $author = document.querySelector('.author');
@@ -22,6 +22,7 @@ var $sadEncouragementPhrase = document.querySelector('.encouragement');
 var $happyEncouragement = document.querySelector('.happy-like-container');
 var $happyEncouragementPhrase = document.querySelector('.happy-encouragement');
 var $newEntryBtn = document.querySelector('.new-entry-btn');
+var $entryList = document.querySelector('.entry-container');
 var $formView = document.querySelector('.form-container');
 var $form = document.querySelector('form');
 var $name = document.querySelector('#name');
@@ -40,6 +41,29 @@ $happyReviewBtn.addEventListener('click', doAfterHappyReview);
 $newEntryBtn.addEventListener('click', showForm);
 $form.addEventListener('submit', submitEntry);
 
+function createEntry(entry) {
+  var $entry = document.createElement('ul');
+  $entry.className = 'entry';
+
+  var $userName = document.createElement('li');
+  $userName.textContent = entry.name;
+  $userName.className = 'user-name';
+
+  var $userMood = document.createElement('li');
+  $userMood.textContent = entry.mood;
+  $userMood.className = 'user-mood';
+
+  var $userNotes = document.createElement('li');
+  $userNotes.textContent = entry.notes;
+  $userNotes.className = 'user-notes';
+
+  $entry.appendChild($userName);
+  $entry.appendChild($userMood);
+  $entry.appendChild($userNotes);
+
+  return $entry;
+}
+
 function submitEntry(event) {
   event.preventDefault();
 
@@ -51,6 +75,7 @@ function submitEntry(event) {
     date: new Date()
   };
 
+  $entryList.prepend(createEntry(entry));
   formData.entries.unshift(entry);
   formData.nextEntryId++;
   $form.reset();
@@ -58,13 +83,13 @@ function submitEntry(event) {
 }
 
 function showForm() {
-  $entriesView.className = 'entry-container hidden';
+  $entriesView.className = 'entry-view-container hidden';
   $formView.className = 'form-container center';
 }
 
 function showEntries() {
   hideHome();
-  $entriesView.className = 'entry-container';
+  $entriesView.className = 'entry-view-container';
   $formView.className = 'form-container center hidden';
 }
 
@@ -115,7 +140,7 @@ function showHome() {
   $sadEncouragement.className = 'sad-like-container hidden';
   $happyEncouragement.className = 'happy-like-container hidden';
   $formView.className = 'form-container hidden';
-  $entriesView.className = 'entry-container hidden';
+  $entriesView.className = 'entry-view-container hidden';
   $body.setAttribute('class', '');
 }
 
