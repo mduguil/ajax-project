@@ -23,6 +23,7 @@ var $happyEncouragement = document.querySelector('.happy-like-container');
 var $happyEncouragementPhrase = document.querySelector('.happy-encouragement');
 var $newEntryBtn = document.querySelector('.new-entry-btn');
 var $entryList = document.querySelector('.entry-container');
+var $entryPlaceholder = document.querySelector('.placeholder-container');
 var $formView = document.querySelector('.form-container');
 var $form = document.querySelector('form');
 var $name = document.querySelector('#name');
@@ -40,6 +41,10 @@ $sadReviewBtn.addEventListener('click', doAfterSadReview);
 $happyReviewBtn.addEventListener('click', doAfterHappyReview);
 $newEntryBtn.addEventListener('click', showForm);
 $form.addEventListener('submit', submitEntry);
+
+function hideEntryPlaceholder() {
+  $entryPlaceholder.className = 'placeholder-container hidden';
+}
 
 function createEntry(entry) {
   var $entry = document.createElement('ul');
@@ -89,6 +94,11 @@ function showForm() {
 
 function showEntries() {
   hideHome();
+
+  if (formData.entries.length) {
+    hideEntryPlaceholder();
+  }
+
   $entriesView.className = 'entry-view-container';
   $formView.className = 'form-container center hidden';
 }
