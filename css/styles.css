@@ -63,6 +63,14 @@ h3 {
   align-items: center;
 }
 
+.entry {
+  background-color: #d5d7d7;
+  width: 570px;
+  height: 100px;
+  list-style-type: none;
+  padding: 10px 30px;
+}
+
 .new-entry-btn-container {
   display: flex;
   justify-content: center;
@@ -335,4 +343,5 @@ i:hover {
 
 .fa-bars {
   font-size: 2rem;
+}
 }
