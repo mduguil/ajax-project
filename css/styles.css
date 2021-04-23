@@ -77,6 +77,18 @@ h3 {
   color: #4a7480;
 }
 
+.user-mood {
+  font-size: 1.1rem;
+  color: #5e8996;
+  margin: 2px 5px;
+}
+
+.user-notes {
+  font-size: 1rem;
+  color: black;
+  margin: 2px 5px;
+}
+
 .new-entry-btn-container {
   display: flex;
   justify-content: center;
