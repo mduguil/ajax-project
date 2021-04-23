@@ -179,3 +179,9 @@ function setAdvice(quote) {
   var advice = adviceData.slip.advice;
   $advice.textContent = advice;
 }
+
+window.addEventListener('DOMContentLoaded', function (event) {
+  for (var entryNum = 0; entryNum < formData.entries.length; entryNum++) {
+    $entryList.appendChild(createEntry(formData.entries[entryNum]));
+  }
+});
