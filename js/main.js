@@ -45,28 +45,20 @@ $form.addEventListener('submit', submitEntry);
 function hideEntryPlaceholder() {
   $entryPlaceholder.className = 'placeholder-container hidden';
 }
+var entry = {
+  name: $name.value,
+  mood: $moodInput.value,
+  notes: $notes.value,
+  entryId: formData.nextEntryId,
+  date: new Date()
+};
 
-function createEntry(entry) {
-  var $entry = document.createElement('ul');
-  $entry.className = 'entry';
-
-  var $userName = document.createElement('li');
-  $userName.textContent = entry.name;
-  $userName.className = 'user-name';
-
-  var $userMood = document.createElement('li');
-  $userMood.textContent = entry.mood;
-  $userMood.className = 'user-mood';
-
-  var $userNotes = document.createElement('li');
-  $userNotes.textContent = entry.notes;
-  $userNotes.className = 'user-notes';
-
-  $entry.appendChild($userName);
-  $entry.appendChild($userMood);
-  $entry.appendChild($userNotes);
-
-  return $entry;
+function getDate(entry) {
+  var newDate = new Date(entry.date);
+  var month = newDate.getMonth();
+  var year = newDate.getFullYear();
+  var day = newDate.getDate();
+  return monthName(month) + ' ' + day + ', ' + year;
 }
 
 function submitEntry(event) {
@@ -85,6 +77,34 @@ function submitEntry(event) {
   formData.nextEntryId++;
   $form.reset();
   showEntries();
+}
+
+function createEntry(entry) {
+  var $entry = document.createElement('ul');
+  $entry.className = 'entry';
+
+  var $userName = document.createElement('li');
+  $userName.textContent = entry.name;
+  $userName.className = 'user-name';
+
+  var $timeStamp = document.createElement('li');
+  $timeStamp.textContent = getDate(entry);
+  $timeStamp.className = 'timestamp';
+
+  var $userMood = document.createElement('li');
+  $userMood.textContent = entry.mood;
+  $userMood.className = 'user-mood';
+
+  var $userNotes = document.createElement('li');
+  $userNotes.textContent = entry.notes;
+  $userNotes.className = 'user-notes';
+
+  $entry.appendChild($userName);
+  $entry.appendChild($timeStamp);
+  $entry.appendChild($userMood);
+  $entry.appendChild($userNotes);
+
+  return $entry;
 }
 
 function showForm() {
@@ -188,6 +208,35 @@ function setAdvice(quote) {
   var adviceData = quote;
   var advice = adviceData.slip.advice;
   $advice.textContent = advice;
+}
+
+function monthName(num) {
+  switch (num) {
+    case 0:
+      return 'January';
+    case 1:
+      return 'February';
+    case 2:
+      return 'March';
+    case 3:
+      return 'April';
+    case 4:
+      return 'May';
+    case 5:
+      return 'June';
+    case 6:
+      return 'July';
+    case 7:
+      return 'August';
+    case 8:
+      return 'Spetember';
+    case 9:
+      return 'October';
+    case 10:
+      return 'November';
+    case 11:
+      return 'December';
+  }
 }
 
 window.addEventListener('DOMContentLoaded', function (event) {

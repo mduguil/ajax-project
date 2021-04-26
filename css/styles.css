@@ -66,10 +66,12 @@ h3 {
 
 .entry {
   background-color: #d5d7d7;
-  width: 570px;
+  width: 90%;
   height: 100px;
   list-style-type: none;
   padding: 10px 30px;
+  margin: 5px 0;
+  border-radius: 2px;
 }
 
 .user-name {
@@ -93,6 +95,7 @@ h3 {
 .new-entry-btn-container {
   display: flex;
   justify-content: center;
+  margin: 7px 0;
 }
 
 .new-entry-btn {
