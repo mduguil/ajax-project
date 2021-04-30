@@ -119,6 +119,10 @@ function showForm() {
 function showEntries() {
   hideHome();
 
+  $sadView.className = 'sad-view-container hidden';
+  $happyView.className = 'happy-view-container hidden';
+  $body.setAttribute('class', '');
+
   if (formData.entries.length) {
     hideEntryPlaceholder();
   }
