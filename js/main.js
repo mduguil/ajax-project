@@ -83,6 +83,9 @@ function createEntry(entry) {
   var $entry = document.createElement('ul');
   $entry.className = 'entry';
 
+  var $userTimeContainer = document.createElement('div');
+  $userTimeContainer.className = 'user-time-container';
+
   var $userName = document.createElement('li');
   $userName.textContent = entry.name;
   $userName.className = 'user-name';
@@ -99,8 +102,9 @@ function createEntry(entry) {
   $userNotes.textContent = entry.notes;
   $userNotes.className = 'user-notes';
 
-  $entry.appendChild($userName);
-  $entry.appendChild($timeStamp);
+  $entry.appendChild($userTimeContainer);
+  $userTimeContainer.appendChild($userName);
+  $userTimeContainer.appendChild($timeStamp);
   $entry.appendChild($userMood);
   $entry.appendChild($userNotes);
 

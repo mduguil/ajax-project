@@ -67,11 +67,15 @@ h3 {
 .entry {
   background-color: #d5d7d7;
   width: 90%;
-  height: 100px;
   list-style-type: none;
   padding: 10px 30px;
   margin: 5px 0;
   border-radius: 2px;
+}
+
+.user-time-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .user-name {
@@ -146,6 +150,8 @@ input {
   border-radius: 2px;
   background-color: #d5d7d7;
   height: 33px;
+  font-size: 1.1rem;
+  padding-left: 10px;
 }
 
 .textarea-container {
