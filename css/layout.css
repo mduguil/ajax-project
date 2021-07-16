@@ -2,13 +2,17 @@
   display: none !important;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 808px) {
   h3 {
     font-size: 1.8rem;
   }
 
   .mood-container {
     flex-direction: row;
+  }
+
+  .entry {
+    width: 570px;
   }
 
   .sad-view-container {

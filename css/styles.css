@@ -57,9 +57,49 @@ h3 {
   margin-top: 30px;
 }
 
+.entry-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.entry {
+  background-color: #d5d7d7;
+  width: 90%;
+  list-style-type: none;
+  padding: 10px 30px;
+  margin: 5px 0;
+  border-radius: 2px;
+}
+
+.user-time-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #4a7480;
+}
+
+.user-mood {
+  font-size: 1.1rem;
+  color: #5e8996;
+  margin: 2px 5px;
+}
+
+.user-notes {
+  font-size: 1rem;
+  color: black;
+  margin: 2px 5px;
+}
+
 .new-entry-btn-container {
   display: flex;
   justify-content: center;
+  margin: 7px 0;
 }
 
 .new-entry-btn {
@@ -110,6 +150,8 @@ input {
   border-radius: 2px;
   background-color: #d5d7d7;
   height: 33px;
+  font-size: 1.1rem;
+  padding-left: 10px;
 }
 
 .textarea-container {
@@ -329,4 +371,5 @@ i:hover {
 
 .fa-bars {
   font-size: 2rem;
+}
 }
