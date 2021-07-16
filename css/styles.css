@@ -191,6 +191,7 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 80px;
 }
 
 .mood {
@@ -241,6 +242,7 @@ button:hover {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 60px;
+  padding-bottom: 90px;
 }
 
 .animal-img {
@@ -328,6 +330,7 @@ img {
 .advice {
   font-size: 2rem;
   text-align: center;
+  background: rgb(0 0 0 / 50%);
 }
 
 .happy-like-container {
